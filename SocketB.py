@@ -2,17 +2,18 @@ import socket
 import json
 import time
 import numpy as np
-falha = 1
 
+falha = 1
 
 # Pergunta ao usuário qual que é o endereço do host e a port (Serviço B é o HOST)
 
 
-host = (input("Por favor informe o endereço do Serviço B [enter = self]: "))
+host = (input("Por favor informe o endereço da Maquina G1 [enter = self]: "))
 if host == '':
-	host = '127.0.0.1'
-port = int(input("Crie uma porta para o Serviço A: "))
-
+    host = '192.168.128.1'
+port = int(input("Crie uma porta para a Maquina C1 [enter = 5800]: "))
+if port == '':
+    port = '5800'
 
 print("Definindo o servidor")
 time.sleep(0.5)
@@ -27,12 +28,12 @@ print("Servidor Ativo!!")
 time.sleep(0.5)
 
 while 1:
-    #Programa fica em stand by esperando o client
-    print("1 - Esperando a conexão com o Serviço A")
+    # Programa fica em stand by esperando o client
+    print("1 - Esperando a conexão com a Maquina C1")
     conexao, endereco = SocketB.accept()
     print(f"2 - Endereço '{endereco}' conectado!! Aguardando Matrizes .....")
     time.sleep(1)
-    #Coloca na variavel arquivo a lista de dicionarios que vier do cliente
+    # Coloca na variavel arquivo a lista de dicionarios que vier do cliente
     arquivo = json.loads(conexao.recv(16384).decode('utf-8'))
     conexao.close()
 
@@ -45,9 +46,9 @@ while 1:
     auxiliar2 = list()
     tempoagora = time.time()
 
-    #Cria a lista das 'm' matrizes e as coloca na variavel lista_matrizes
+    # Cria a lista das 'm' matrizes e as coloca na variavel lista_matrizes
     for b in range(0, arquivo[0]['quantidade']):
-        print(f"Tempo da Matriz {b}: {round(tempoagora - arquivo[b]['fim'],3)} segundos")
+        print(f"Tempo da Matriz {b}: {round(tempoagora - arquivo[b]['fim'], 3)} segundos")
         time.sleep(0.5)
         for a in arquivo[b]['matriz']:
             if a == '\n':
@@ -58,14 +59,16 @@ while 1:
         arquivo[b]['matriz'] = auxiliar2.copy()
         auxiliar2.clear()
 
-        #Cria uma key inversa na listas de dicionarios.
+        # Cria uma key inversa na listas de dicionarios.
         arquivo[b]['inversa'] = round(1 / np.linalg.det(arquivo[b]['matriz']), 5)
     print()
 
     print("Pacote Recebido com Sucesso!! ")
+print(type(arquivo))
+print(arquivo)
 
 
-
+'''
     # Envio das matrizes
     HOST2 = (input("Por favor informar o endereço do Serviço C [enter = self]: "))
     if HOST2 == '':
@@ -90,10 +93,10 @@ while 1:
             print(f"Endereço '{HOST2}' conectado!!")
             falha = 0
 
-
     SocketC.send(json.dumps(arquivo).encode('utf-8'))
 
     continuacao = input("Deseja fazer mais alguma operação? ")
-
+    
+    '''
 
 

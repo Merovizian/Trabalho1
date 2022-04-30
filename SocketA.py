@@ -27,6 +27,7 @@ def matrizmake (texto, quantidade, ordem, min, max, taxa):
         tempo_matriz = matriz['fim'] - matriz['inicial']  # Utiliza as variaveis para calcular o tempo passsado para gerar cada matriz
         print(f"\033[1;34mA MATRIZ {contador + 1} foi gerada com {tempo_matriz:.5f} segundos.... \033[m")
         listamatriz.append(matriz.copy())
+
     return listamatriz
 
 
@@ -53,6 +54,7 @@ while falha:
             print(f"Endereço '{HOST}' conectado!!")
             falha = 0
 
+
 # VARIAVEIS:
 quantidade = int(input("Qual a quantidade de matrizes: ")) # Pergunta ao usuário qual a quantidade de matrizes
 ordem = int(input("Informe a ordem da matriz: ")) # Coloca na variavel ordem um inteiro que sera o tamanho da matriz
@@ -69,6 +71,9 @@ arquivo = matrizmake(texto, quantidade, ordem, min, max, taxa)
 
 #Variavel que registra o tempo atual em segundos para calculo do tempo total gasto
 fim_total = time.time()
+
+print(type(arquivo))
+print(arquivo)
 
 
 b = json.dumps(arquivo).encode('utf-8')
