@@ -6,7 +6,7 @@ falha = 1
 
 
 
-def matrizmake (texto, quantidade, ordem, min, max, taxa):
+def matrizmake (texto, quantidade, ordem, min, max, taxa, inicio):
     matriz = dict()
     listamatriz = list()
     texto = list()
@@ -70,7 +70,7 @@ taxa = float(input("Informe a taxa de matrizes por segungo: ")) # Taxa de criaç
 ini_total = time.time()
 
 # Função para geração dos valores e registro em uma lista os valores dos elementos em seus respectivos indices
-arquivo = matrizmake(texto, quantidade, ordem, min, max, taxa)
+arquivo = matrizmake(texto, quantidade, ordem, min, max, taxa, inicio)
 
 #Variavel que registra o tempo atual em segundos para calculo do tempo total gasto
 fim_total = time.time()
