@@ -2,7 +2,7 @@ import socket
 import json
 import time
 import numpy as np
-
+resultado =''
 falha = 1
 
 # Pergunta ao usuário qual que é o endereço do host e a port (Serviço B é o HOST)

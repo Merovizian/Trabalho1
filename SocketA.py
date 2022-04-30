@@ -77,6 +77,7 @@ fim_total = time.time()
 
 m = arquivo[0]['quantidade']
 n = arquivo[0]['ordem']
+resultado = ''
 while resultado not in ("N, Nao, Sim, S, NAO, SIM, s,n"):
     resultado = input("Opção inválida, por favor digite [N/S]: ")
 print()
