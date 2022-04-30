@@ -79,21 +79,26 @@ while 1:
 
 
 
-    # Envio das matrizes
-    HOST2 = (input("Por favor informar o endereço da Maquina G2 [enter = 192.168.128.66]: "))
-    if HOST2 == '':
-        HOST2 = '192.168.128.66'
-    PORT2 = (input("Informe o numero do PORT CRIADO na Maquina G2: [enter = 6800]: "))
-    if PORT2 == '':
-        PORT2 = 6800
-    else:
-        int(PORT2)
 
-    SocketC = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     while falha:
 
         try:
+
+            # Envio das matrizes
+            HOST2 = (input("Por favor informar o endereço da Maquina G2 [enter = 192.168.128.66]: "))
+            if HOST2 == '':
+                HOST2 = '192.168.128.66'
+            PORT2 = (input("Informe o numero do PORT CRIADO na Maquina G2: [enter = 6800]: "))
+            if PORT2 == '':
+                PORT2 = 6800
+            else:
+                int(PORT2)
+
+            SocketC = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+
+
             print(f"Tentando conectar ao endereço '{HOST2}' pela porta {PORT2}")
             SocketC.connect((HOST2, PORT2))
         except:
