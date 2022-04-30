@@ -39,6 +39,7 @@ if HOST == '':
 PORT = (input("Informe o numero do PORT CRIADO na Maquina G1: [enter = 5800]"))
 if PORT == '':
     PORT = 5800
+else:port = int(PORT)
 
 while falha:
 

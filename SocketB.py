@@ -14,6 +14,8 @@ if host == '':
 port = (input("Crie uma porta para a Maquina C1 [enter = 5800]: "))
 if port == '':
     port = 5800
+else:port = int(port)
+
 
 print("Definindo o servidor")
 time.sleep(0.5)

@@ -13,7 +13,7 @@ if host == '':
 port = (input("Crie uma porta para o Serviço G2 [enter = 6800]: "))
 if port == '':
     port = 6800
-
+else:port = int(port)
 
 SocketB = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 while falha:
