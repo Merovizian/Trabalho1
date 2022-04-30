@@ -15,8 +15,8 @@ if port == '':
     port = 6800
 else:port = int(port)
 
-SocketB = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-while falha:
+
+'''while falha:
 
     try:
         print(f"Tentando conectar ao endereço '{host}' pela porta {port}")
@@ -32,10 +32,10 @@ while falha:
         falha = 1
     else:
         print(f"Endereço '{host}' conectado!!")
-        falha = 0
+        falha = 0'''
 
 
-
+SocketB = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print("Definindo o servidor ")
 time.sleep(0.5)
 print("Configurando socket para AFINET E SOCK STREM")
