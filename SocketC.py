@@ -6,13 +6,15 @@ import time
 
 
 # Pergunta ao usuário qual que é o endereço do host e a port (Serviço C é o HOST)
-host = (input("Por favor informe o endereço do Serviço B [enter = self]: "))
+host = (input("Por favor informe o endereço da Maquina G2 [enter = 192.168.128.2]: "))
 if host == '':
-    host = '127.0.0.1'
-port = int(input("Crie uma porta para o Serviço B: "))
+    host = '192.168.128.2'
+port = int(input("Crie uma porta para o Serviço G2 [enter = 6800]: "))
+if port == '':
+    port = 6800
 
 
-print("Definindo o servidor")
+print("Definindo o servidor ")
 time.sleep(0.5)
 print("Configurando socket para AFINET E SOCK STREM")
 time.sleep(0.5)
@@ -56,10 +58,13 @@ while 1:
             for b in range(0, n):
                 print(arquivo[a]['matriz'][b])
             print(f"Det Inversa: {arquivo[a]['inversa']}")
+            print(f"Tempo total de execução {arquivo[a]['fim'] - arquivo[a]['inicial']}")
             print()
 
     else:
         for a in range(0, int(arquivo[0]['quantidade'])):
             print(f"O Determinante da Matriz {a + 1} {arquivo[a]['inversa']}")
+            print(f"Tempo total de execução {arquivo[a]['fim'] - arquivo[a]['inicial']}")
+
 
     continuacao = input("Deseja fazer mais alguma operação? ")
