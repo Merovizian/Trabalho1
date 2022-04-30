@@ -75,9 +75,17 @@ arquivo = matrizmake(texto, quantidade, ordem, min, max, taxa)
 #Variavel que registra o tempo atual em segundos para calculo do tempo total gasto
 fim_total = time.time()
 
-print(type(arquivo))
-print(arquivo)
+m = arquivo[0]['quantidade']
+n = arquivo[0]['ordem']
+while resultado not in ("N, Nao, Sim, S, NAO, SIM, s,n"):
+    resultado = input("Opção inválida, por favor digite [N/S]: ")
+print()
 
+if resultado in ("sim, S, SIM,s"):
+    for a in range(0, m):
+        print(f"Matriz {a + 1}")
+        for b in range(0, n):
+            print(arquivo[a]['matriz'][b])
 
 b = json.dumps(arquivo).encode('utf-8')
 s.sendall(b)

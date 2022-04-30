@@ -66,15 +66,28 @@ while 1:
         arquivo[b]['inversa'] = round(1 / np.linalg.det(arquivo[b]['matriz']), 5)
     print()
     print("Pacote Recebido com Sucesso!! ")
+    while resultado not in ("N, Nao, Sim, S, NAO, SIM, s,n"):
+        resultado = input("Opção inválida, por favor digite [N/S]: ")
+    print()
+
+    if resultado in ("sim, S, SIM,s"):
+        for a in range(0, m):
+            print(f"Matriz {a+1}")
+            for b in range(0, n):
+                print(arquivo[a]['matriz'][b])
+            print(f"Det Inversa: {arquivo[a]['inversa']}")
+
+
 
     # Envio das matrizes
-    HOST2 = (input("Por favor informar o endereço da Maquina G1 [enter = 192.168.128.66]: "))
+    HOST2 = (input("Por favor informar o endereço da Maquina G2 [enter = 192.168.128.66]: "))
     if HOST2 == '':
         HOST2 = '192.168.128.66'
-    PORT2 = (input("Informe o numero do PORT CRIADO na Maquina G1: [enter = 7400]: "))
+    PORT2 = (input("Informe o numero do PORT CRIADO na Maquina G2: [enter = 6800]: "))
     if PORT2 == '':
-        PORT2 = 7400
-    else: int(PORT2)
+        PORT2 = 6800
+    else:
+        int(PORT2)
 
     SocketC = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -85,10 +98,14 @@ while 1:
             SocketC.connect((HOST2, PORT2))
         except:
             print(f"Endereço '{HOST2}' não conectado!!")
-            HOST2 = input("Por favor informe o endereço do Serviço C [enter = self]: ")
+            HOST2 = input("Por favor informar o endereço da Maquina G2 [enter = 192.168.128.66]: ")
             if HOST2 == '':
-                HOST2 = '127.0.0.1'
-            PORT2 = int(input("Informe o numero do PORT CRIADO no Serviço C: "))
+                HOST2 = '192.168.128.66'
+            PORT2 = int(input("Informe o numero do PORT CRIADO na Maquina G2: [enter = 6800]: "))
+            if PORT2 == '':
+                PORT2 = 6800
+            else:
+                int(PORT2)
             falha = 1
         else:
             print(f"Endereço '{HOST2}' conectado!!")
