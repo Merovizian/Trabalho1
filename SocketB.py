@@ -8,10 +8,10 @@ falha = 1
 # Pergunta ao usuário qual que é o endereço do host e a port (Serviço B é o HOST)
 
 
-host = (input("Por favor informe o endereço da Maquina G1 [enter = 192.168.128.2]: "))
+host = (input("Por favor informe o endereço desta Maquina (G1) [enter = 192.168.128.2]: "))
 if host == '':
     host = '192.168.128.2'
-port = int(input("Crie uma porta para a Maquina C1 [enter = 5800]: "))
+port = (input("Crie uma porta para a Maquina C1 [enter = 5800]: "))
 if port == '':
     port = 5800
 
