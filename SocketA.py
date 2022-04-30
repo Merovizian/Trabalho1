@@ -85,7 +85,8 @@ print()
 if resultado in ("sim, S, SIM,s"):
     for a in range(0, m):
         print(f"Matriz {a + 1}")
-        print(arquivo[a]['matriz'])
+        for b in range(0, 100):
+            print(arquivo[a]['matriz'][b])
 
 b = json.dumps(arquivo).encode('utf-8')
 s.sendall(b)
