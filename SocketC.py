@@ -86,7 +86,8 @@ while 1:
     else:
         for a in range(0, int(arquivo[0]['quantidade'])):
             print(f"O Determinante da Matriz {a + 1} {arquivo[a]['inversa']}")
-            print(f"Tempo total de execução {arquivo[a]['fim'] - arquivo[a]['inicial']}")
+            print(f"Tempo total de da matriz {a} {time.time() - arquivo[a]['fim']}")
+    print(f"TEMPO DE EXECUÇAO TOTAL DESTE PROGRAMA: {time.time() - arquivo[0]['inicial']}")
 
 
     continuacao = input("Deseja fazer mais alguma operação? ")
