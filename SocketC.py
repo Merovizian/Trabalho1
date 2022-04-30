@@ -2,16 +2,38 @@ import socket
 import json
 import time
 #import numpy as np
+falha = 1
 
 
 
 # Pergunta ao usuário qual que é o endereço do host e a port (Serviço C é o HOST)
-host = (input("Por favor informe o endereço da Maquina G2 [enter = 192.168.128.2]: "))
+host = (input("Por favor informe o endereço desta Maquina (G1) [enter = 192.168.128.66]: "))
 if host == '':
-    host = '192.168.128.2'
-port = int(input("Crie uma porta para o Serviço G2 [enter = 6800]: "))
+    host = '192.168.128.66'
+port = (input("Crie uma porta para o Serviço G2 [enter = 6800]: "))
 if port == '':
     port = 6800
+
+
+SocketB = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+while falha:
+
+    try:
+        print(f"Tentando conectar ao endereço '{host}' pela porta {port}")
+        SocketB.connect((host, port))
+    except:
+        print(f"Endereço '{host}' não conectado!!")
+        host = (input("Por favor informe o endereço desta Maquina (G1) [enter = 192.168.128.66]: "))
+        if host == '':
+            host = '192.168.128.66'
+        port = (input("Crie uma porta para o Serviço G2 [enter = 6800]: "))
+        if port == '':
+            port = 6800
+        falha = 1
+    else:
+        print(f"Endereço '{host}' conectado!!")
+        falha = 0
+
 
 
 print("Definindo o servidor ")
