@@ -8,12 +8,12 @@ falha = 1
 # Pergunta ao usuário qual que é o endereço do host e a port (Serviço B é o HOST)
 
 
-host = (input("Por favor informe o endereço da Maquina G1 [enter = self]: "))
+host = (input("Por favor informe o endereço da Maquina G1 [enter = 192.168.128.2]: "))
 if host == '':
-    host = '192.168.128.1'
+    host = '192.168.128.2'
 port = int(input("Crie uma porta para a Maquina C1 [enter = 5800]: "))
 if port == '':
-    port = '5800'
+    port = 5800
 
 print("Definindo o servidor")
 time.sleep(0.5)

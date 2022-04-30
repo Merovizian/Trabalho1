@@ -33,10 +33,10 @@ def matrizmake (texto, quantidade, ordem, min, max, taxa):
 
 # Funções que farão o envio das matrizes
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-HOST = (input("Por favor informe o endereço do Serviço B [enter = self]: "))
+HOST = (input("Por favor informe o endereço da Maquina G1 [enter = 192.168.128.2]: "))
 if HOST == '':
-    HOST = '127.0.0.1'
-PORT = int(input("Informe o numero do PORT CRIADO no Serviço B: "))
+    HOST = '192.168.128.2'
+PORT = int(input("Informe o numero do PORT CRIADO na Maquina G1: "))
 
 while falha:
 
@@ -45,7 +45,7 @@ while falha:
             s.connect((HOST, PORT))
         except:
             print(f"Endereço '{HOST}' não conectado!!")
-            HOST = input("Por favor informe o endereço do Serviço B [enter = self]: ")
+            HOST = input("Por favor informe o endereço da Maquina G1 [enter = self]: ")
             if HOST == '':
                 HOST = '127.0.0.1'
             PORT = int(input("Informe o numero do PORT CRIADO no Serviço B: "))
