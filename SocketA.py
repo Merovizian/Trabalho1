@@ -36,7 +36,9 @@ s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 HOST = (input("Por favor informe o endereço da Maquina G1 [enter = 192.168.128.2]: "))
 if HOST == '':
     HOST = '192.168.128.2'
-PORT = int(input("Informe o numero do PORT CRIADO na Maquina G1: "))
+PORT = (input("Informe o numero do PORT CRIADO na Maquina G1: "))
+if PORT == '':
+    PORT = 5800
 
 while falha:
 
