@@ -68,10 +68,13 @@ while 1:
     print("Pacote Recebido com Sucesso!! ")
 
     # Envio das matrizes
-    HOST2 = (input("Por favor informar o endereço do Serviço C [enter = self]: "))
+    HOST2 = (input("Por favor informar o endereço da Maquina G1 [enter = 192.168.128.66]: "))
     if HOST2 == '':
-        HOST2 = '127.0.0.1'
-    PORT2 = int(input("Informe o numero do PORT CRIADO no Serviço C: "))
+        HOST2 = '192.168.128.66'
+    PORT2 = (input("Informe o numero do PORT CRIADO na Maquina G1: [enter = 7400]: "))
+    if PORT2 == '':
+        PORT2 = 7400
+    else: int(PORT2)
 
     SocketC = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
