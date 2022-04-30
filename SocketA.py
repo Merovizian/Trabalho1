@@ -76,9 +76,7 @@ arquivo = matrizmake(texto, quantidade, ordem, min, max, taxa)
 fim_total = time.time()
 
 m = arquivo[0]['quantidade']
-print(m)
 n = arquivo[0]['ordem']
-print(n)
 resultado = ''
 while resultado not in ("N, Nao, Sim, S, NAO, SIM, s,n"):
     resultado = input("Opção inválida, por favor digite [N/S]: ")
@@ -87,9 +85,7 @@ print()
 if resultado in ("sim, S, SIM,s"):
     for a in range(0, m):
         print(f"Matriz {a + 1}")
-        for b in range(0, n):
-            print("a")
-            print(arquivo[a]['matriz'][b])
+        print(arquivo[a]['matriz'])
 
 b = json.dumps(arquivo).encode('utf-8')
 s.sendall(b)
