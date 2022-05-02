@@ -2,7 +2,6 @@ import socket
 import json
 import time
 import numpy as np
-resultado =''
 falha = 1
 
 # Pergunta ao usuário qual que é o endereço do host e a port (Serviço B é o HOST)
@@ -66,6 +65,9 @@ while 1:
         arquivo[b]['inversa'] = round(1 / np.linalg.det(arquivo[b]['matriz']), 5)
     print()
     print("Pacote Recebido com Sucesso!! ")
+
+
+    resultado = input("Deseja imprimir as matrizes? ")
     while resultado not in ("N, Nao, Sim, S, NAO, SIM, s,n"):
         resultado = input("Opção inválida, por favor digite [N/S]: ")
     print()
