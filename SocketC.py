@@ -22,8 +22,8 @@ if automatica in ("sim, S, SIM,s"):
     else:
         port = int(port)
 else:
-    HOST = '192.168.128.66'
-    PORT = 6800
+    host = '192.168.128.66'
+    port = 6800
 
 
 

@@ -23,8 +23,8 @@ if automatica in ("sim, S, SIM,s"):
     else:
         port = int(port)
 else:
-    HOST = '192.168.128.2'
-    PORT = 5800
+    host = '192.168.128.2'
+    port = 5800
 
 
 
@@ -112,8 +112,8 @@ while 1:
                 else:
                     int(PORT2)
             else:
-                HOST = '192.168.128.66'
-                PORT = 6800
+                HOST2 = '192.168.128.66'
+                PORT2 = 6800
 
 
 
