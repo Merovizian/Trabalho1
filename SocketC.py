@@ -50,7 +50,7 @@ time.sleep(0.5)
 
 while 1:
     #Programa fica em stand by esperando o client
-    print("1 - Esperando a conexão com o Serviço B")
+    print("1 - Esperando a conexão com a Maquina G2")
     conexao, endereco = SocketB.accept()
     print(f"2 - Endereço '{endereco}' conectado!! Aguardando Matrizes .....")
     time.sleep(1)
@@ -69,7 +69,7 @@ while 1:
     auxiliar2 = list()
     tempoagora = time.time()
 
-    resultado = input("Matrizes do Serviço B Recebidas ! deseja exibilas? [N/S]: ")
+    resultado = input("Matrizes da Maquina G2 recebidas! deseja exibilas? [N/S]: ")
     while resultado not in ("N, Nao, Sim, S, NAO, SIM, s,n"):
         resultado = input("Opção inválida, por favor digite [N/S]: ")
     print()
