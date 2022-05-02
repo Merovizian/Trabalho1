@@ -64,7 +64,7 @@ while 1:
 
     # Cria a lista das 'm' matrizes e as coloca na variavel lista_matrizes
     for b in range(0, arquivo[0]['quantidade']):
-        print(f"Calculando a inversa e o determinante da Matriz {b}")
+        print(f"Calculando a inversa e o determinante da Matriz {b+1}")
         time.sleep(0.5)
         for a in arquivo[b]['matriz']:
             if a == '\n':
