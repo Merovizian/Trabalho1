@@ -80,7 +80,7 @@ while 1:
             for b in range(0, n):
                 print(arquivo[a]['matriz'][b])
             print(f"Det Inversa: {arquivo[a]['inversa']}")
-            print(f"Tempo total de execução {arquivo[a]['fim'] - arquivo[a]['inicial']}")
+            print(f"Tempo total de execução {time.time() - arquivo[a]['inicial']}")
             print()
 
     else:
