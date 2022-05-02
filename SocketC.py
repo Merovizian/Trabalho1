@@ -71,6 +71,8 @@ while 1:
 
     #Exibir as matrizes recebidas
     print("3 - Pacotes Recebidos")
+    print(f"TEMPO DA CRIAÇÃO ATÉ RECEBIMENTO DE MATRIZES: {time.time() - arquivo[0]['inicial']}")
+
     time.sleep(1)
     m = arquivo[0]['quantidade']
     n = arquivo[0]['ordem']
@@ -81,7 +83,6 @@ while 1:
     tempoagora = time.time()
 
     resultado = input("Matrizes da Maquina G2 recebidas! deseja exibilas? [N/S]: ")
-    tempofinal = time.time()
     while resultado not in ("N, Nao, Sim, S, NAO, SIM, s,n"):
         resultado = input("Opção inválida, por favor digite [N/S]: ")
     print()
@@ -99,7 +100,7 @@ while 1:
         for a in range(0, int(arquivo[0]['quantidade'])):
             print(f"O Determinante da Matriz {a + 1} {arquivo[a]['inversa']}")
             print(f"Tempo total de da matriz {a} {time.time() - arquivo[a]['fim']}")
-    print(f"TEMPO DE EXECUÇAO TOTAL DESTE PROGRAMA: {tempofinal - arquivo[0]['inicial']}")
+    print(f"TEMPO DE EXECUÇAO TOTAL DESTE PROGRAMA: {time.time() - arquivo[0]['inicial']}")
 
 
     continuacao = input("Deseja fazer mais alguma operação? ")

@@ -73,7 +73,7 @@ quantidade = int(input("Qual a quantidade de matrizes: "))  # Pergunta ao usuár
 ordem = int(input("Informe a ordem da matriz: "))  # Coloca na variavel ordem um inteiro que sera o tamanho da matriz
 
 texto = list()  # lista para registar em arquivo as matrizes geradas.
-taxa = float(input("Informe a taxa de matrizes por segungo: "))  # Taxa de criação das matrizes [MATRIZES/Segundo]
+taxa = float(input("Informe a taxa de matrizes por segundo: "))  # Taxa de criação das matrizes [MATRIZES/Segundo]
 
 # Variavel que registra o tempo atual em segundos para calculo do tempo total gasto
 ini_total = time.time()
