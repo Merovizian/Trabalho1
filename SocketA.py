@@ -6,7 +6,7 @@ import time
 falha = 1
 
 automatica = input("Deseja inserir dados manualmente? ")
-while automatica not in ("N,Nao,Sim,S,NAO,SIM,s,n"):
+while automatica not in ('N','Nao','Sim','S','NAO','SIM','s','n'):
     automatica = input("Opção inválida, por favor digite [N/S]: ")
 print()
 
