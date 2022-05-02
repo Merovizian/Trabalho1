@@ -118,8 +118,6 @@ print(f"Foram recebidas {m} Matrizes de Ordem {n} x {n}")
 auxiliar = list()
 auxiliar2 = list()
 for b in range(0, arquivo[0]['quantidade']):
-    print(f"Calculando a inversa e o determinante da Matriz {b+1}")
-    time.sleep(0.5)
     for a in arquivo[b]['matriz']:
         if a == '\n':
             auxiliar2.append(auxiliar.copy())

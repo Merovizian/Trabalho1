@@ -1,6 +1,8 @@
 import socket
 import json
 import time
+import numpy
+
 #import numpy as np
 falha = 1
 
@@ -91,7 +93,7 @@ while 1:
         for a in range(0, m):
             print(f"Matriz {a+1}")
             for b in range(0, n):
-                print(arquivo[a]['matriz'][b])
+                print(numpy.linalg.inv(arquivo[a]['matriz'][b]))
             print(f"Det Inversa: {arquivo[a]['inversa']}")
             print(f"Tempo total de execução {round(time.time() - arquivo[a]['inicial'],2)} segundos")
             print()
