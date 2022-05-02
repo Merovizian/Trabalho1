@@ -7,13 +7,27 @@ falha = 1
 # Pergunta ao usuário qual que é o endereço do host e a port (Serviço B é o HOST)
 
 
-host = (input("Por favor informe o endereço desta Maquina (G1) [enter = 192.168.128.2]: "))
-if host == '':
-    host = '192.168.128.2'
-port = (input("Crie uma porta para a Maquina C1 [enter = 5800]: "))
-if port == '':
-    port = 5800
-else:port = int(port)
+automatica = input("Deseja inserir dados manualmente? ")
+while automatica not in ("N, Nao, Sim, S, NAO, SIM, s,n"):
+    automatica = input("Opção inválida, por favor digite [N/S]: ")
+print()
+
+
+if automatica in ("sim, S, SIM,s"):
+    host = (input("Por favor informe o endereço desta Maquina (G1) [enter = 192.168.128.2]: "))
+    if host == '':
+        host = '192.168.128.2'
+    port = (input("Crie uma porta para a Maquina C1 [enter = 5800]: "))
+    if port == '':
+        port = 5800
+    else:
+        port = int(port)
+else:
+    HOST = '192.168.128.2'
+    PORT = 5800
+
+
+
 
 
 print("Definindo o servidor")
@@ -87,16 +101,22 @@ while 1:
     while falha:
 
         try:
-
             # Envio das matrizes
-            HOST2 = (input("Por favor informar o endereço da Maquina G2 [enter = 192.168.128.66]: "))
-            if HOST2 == '':
-                HOST2 = '192.168.128.66'
-            PORT2 = (input("Informe o numero do PORT CRIADO na Maquina G2: [enter = 6800]: "))
-            if PORT2 == '':
-                PORT2 = 6800
+            if automatica in ("sim, S, SIM,s"):
+                HOST2 = (input("Por favor informar o endereço da Maquina G2 [enter = 192.168.128.66]: "))
+                if HOST2 == '':
+                    HOST2 = '192.168.128.66'
+                PORT2 = (input("Informe o numero do PORT CRIADO na Maquina G2: [enter = 6800]: "))
+                if PORT2 == '':
+                    PORT2 = 6800
+                else:
+                    int(PORT2)
             else:
-                int(PORT2)
+                HOST = '192.168.128.2'
+                PORT = 5800
+
+
+
 
             SocketC = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 

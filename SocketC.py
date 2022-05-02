@@ -7,13 +7,24 @@ falha = 1
 
 
 # Pergunta ao usuário qual que é o endereço do host e a port (Serviço C é o HOST)
-host = (input("Por favor informe o endereço desta Maquina (G1) [enter = 192.168.128.66]: "))
-if host == '':
-    host = '192.168.128.66'
-port = (input("Crie uma porta para o Serviço G2 [enter = 6800]: "))
-if port == '':
-    port = 6800
-else:port = int(port)
+automatica = input("Deseja inserir dados manualmente? ")
+while automatica not in ("N, Nao, Sim, S, NAO, SIM, s,n"):
+    automatica = input("Opção inválida, por favor digite [N/S]: ")
+print()
+
+if automatica in ("sim, S, SIM,s"):
+    host = (input("Por favor informe o endereço desta Maquina (G1) [enter = 192.168.128.66]: "))
+    if host == '':
+        host = '192.168.128.66'
+    port = (input("Crie uma porta para o Serviço G2 [enter = 6800]: "))
+    if port == '':
+        port = 6800
+    else:
+        port = int(port)
+else:
+    HOST = '192.168.128.2'
+    PORT = 5800
+
 
 
 '''while falha:
