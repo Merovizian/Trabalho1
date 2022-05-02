@@ -81,23 +81,6 @@ while 1:
     print("Pacote Recebido com Sucesso!! ")
 
 
-    resultado = input("Deseja imprimir as matrizes? ")
-    while resultado not in ("N, Nao, Sim, S, NAO, SIM, s,n"):
-        resultado = input("Opção inválida, por favor digite [N/S]: ")
-    print()
-
-    if resultado in ("sim, S, SIM,s"):
-        for a in range(0, m):
-            print(f"Matriz {a+1}")
-            for b in range(0, n):
-                print(arquivo[a]['matriz'][b])
-            print(f"Det: {round(np.linalg.det(arquivo[a]['matriz']), 5)}")
-            print(f"Det Inversa: {arquivo[a]['inversa']}")
-
-
-
-
-
     while falha:
 
         try:
@@ -115,11 +98,7 @@ while 1:
                 HOST2 = '192.168.128.66'
                 PORT2 = 6800
 
-
-
-
             SocketC = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
 
 
             print(f"Tentando conectar ao endereço '{HOST2}' pela porta {PORT2}")
@@ -138,10 +117,26 @@ while 1:
         else:
             print(f"Endereço '{HOST2}' conectado!!")
             falha = 0
-
     SocketC.send(json.dumps(arquivo).encode('utf-8'))
 
-    continuacao = input("Deseja fazer mais alguma operação? ")
+
+    #Pergunta ao usuario se gostaria de mostrar as matrizes na tela.
+
+    resultado = input("Deseja imprimir as matrizes? ")
+    while resultado not in ("N, Nao, Sim, S, NAO, SIM, s,n"):
+        resultado = input("Opção inválida, por favor digite [N/S]: ")
+    print()
+
+    if resultado in ("sim, S, SIM,s"):
+        for a in range(0, m):
+            print(f"Matriz {a+1}")
+            for b in range(0, n):
+                print(arquivo[a]['matriz'][b])
+            print(f"Det: {round(np.linalg.det(arquivo[a]['matriz']), 5)}")
+            print(f"Det Inversa: {arquivo[a]['inversa']}")
+
+    # Para futuras ocorrencias
+    # continuacao = input("Deseja fazer mais alguma operação? ")
     
 
 
