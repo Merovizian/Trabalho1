@@ -103,3 +103,34 @@ s.sendall(b)
 
 # Utiliza as variaveis para calcular o tempo passsado para gerar cada matriz
 print(f"\033[1;32mForam geradas {quantidade} matrizes em {fim_total - ini_total:.5f} segundos\033[m")
+
+
+# IMPRIME AS MATRIZES
+resultado = input("Deseja imprimir as matrizes? ")
+while resultado not in ("N, Nao, Sim, S, NAO, SIM, s,n"):
+    resultado = input("Opção inválida, por favor digite [N/S]: ")
+print()
+
+
+m = arquivo[0]['quantidade']
+n = arquivo[0]['ordem']
+print(f"Foram recebidas {m} Matrizes de Ordem {n} x {n}")
+auxiliar = list()
+auxiliar2 = list()
+for b in range(0, arquivo[0]['quantidade']):
+    print(f"Calculando a inversa e o determinante da Matriz {b+1}")
+    time.sleep(0.5)
+    for a in arquivo[b]['matriz']:
+        if a == '\n':
+            auxiliar2.append(auxiliar.copy())
+            auxiliar.clear()
+        if a in ('0,1,2,3,4,5,6,7,8,9'):
+            auxiliar.append(int(a))
+    arquivo[b]['matriz'] = auxiliar2.copy()
+    auxiliar2.clear()
+
+if resultado in ("sim, S, SIM,s"):
+    for a in range(0, m):
+        print(f"Matriz {a + 1}")
+        for b in range(0, n):
+            print(arquivo[a]['matriz'][b])
