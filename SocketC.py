@@ -71,7 +71,7 @@ while 1:
 
     #Exibir as matrizes recebidas
     print("3 - Pacotes Recebidos")
-    print(f"TEMPO DA CRIAÇÃO ATÉ RECEBIMENTO DE MATRIZES: {time.time() - arquivo[0]['inicial']}")
+    print(f"TEMPO DA CRIAÇÃO ATÉ RECEBIMENTO DE MATRIZES: {round(time.time() - arquivo[0]['inicial'],2)}")
 
     time.sleep(1)
     m = arquivo[0]['quantidade']
