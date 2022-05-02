@@ -101,6 +101,6 @@ while 1:
             print(f"O Determinante da Inversa da Matriz {a + 1}: {round(arquivo[a]['inversa'],5)}")
             print(f"Tempo total de da matriz {a+1} {round(time.time() - arquivo[a]['fim'],2)} segundos")
     print(f"TEMPO DE EXECUÇAO TOTAL DESTE PROGRAMA: {round(time.time() - arquivo[0]['inicial'],2)} segundos")
-
-
-    continuacao = input("Deseja fazer mais alguma operação? ")
+    break
+    #caso queira implementar algo mais.
+    #continuacao = input("Deseja fazer mais alguma operação? ")
