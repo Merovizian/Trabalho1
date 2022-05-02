@@ -134,7 +134,8 @@ while 1:
                 print(arquivo[a]['matriz'][b])
             print(f"Det: {round(np.linalg.det(arquivo[a]['matriz']), 5)}")
             print(f"Det Inversa: {arquivo[a]['inversa']}")
-            break
+        falha = 0
+        break
 
     # Para futuras ocorrencias
     # continuacao = input("Deseja fazer mais alguma operação? ")
