@@ -75,6 +75,7 @@ while 1:
             print(f"Matriz {a+1}")
             for b in range(0, n):
                 print(arquivo[a]['matriz'][b])
+            print(f"Det: {round(np.linalg.det(arquivo[a]['matriz']), 5)}")
             print(f"Det Inversa: {arquivo[a]['inversa']}")
 
 
