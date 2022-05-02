@@ -109,7 +109,7 @@ while 1:
             HOST2 = input("Por favor informar o endereço da Maquina G2 [enter = 192.168.128.66]: ")
             if HOST2 == '':
                 HOST2 = '192.168.128.66'
-            PORT2 = int(input("Informe o numero do PORT CRIADO na Maquina G2: [enter = 6800]: "))
+            PORT2 = (input("Informe o numero do PORT CRIADO na Maquina G2: [enter = 6800]: "))
             if PORT2 == '':
                 PORT2 = 6800
             else:
