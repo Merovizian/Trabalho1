@@ -98,8 +98,8 @@ while 1:
 
     else:
         for a in range(0, int(arquivo[0]['quantidade'])):
-            print(f"O Determinante da Inversa da Matriz {a + 1} {round(arquivo[a]['inversa'],5)}")
-            print(f"Tempo total de da matriz {a} {round(time.time() - arquivo[a]['fim'],2)} segundos")
+            print(f"O Determinante da Inversa da Matriz {a + 1}: {round(arquivo[a]['inversa'],5)}")
+            print(f"Tempo total de da matriz {a+1} {round(time.time() - arquivo[a]['fim'],2)} segundos")
     print(f"TEMPO DE EXECUÇAO TOTAL DESTE PROGRAMA: {round(time.time() - arquivo[0]['inicial'],2)} segundos")
 
 

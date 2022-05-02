@@ -64,7 +64,7 @@ while 1:
 
     # Cria a lista das 'm' matrizes e as coloca na variavel lista_matrizes
     for b in range(0, arquivo[0]['quantidade']):
-        print(f"Tempo da Matriz {b}: {round(tempoagora - arquivo[b]['fim'], 3)} segundos")
+        print(f"Calculando a inversa e o determinante da Matriz {b}")
         time.sleep(0.5)
         for a in arquivo[b]['matriz']:
             if a == '\n':
@@ -134,6 +134,7 @@ while 1:
                 print(arquivo[a]['matriz'][b])
             print(f"Det: {round(np.linalg.det(arquivo[a]['matriz']), 5)}")
             print(f"Det Inversa: {arquivo[a]['inversa']}")
+            break
 
     # Para futuras ocorrencias
     # continuacao = input("Deseja fazer mais alguma operação? ")
