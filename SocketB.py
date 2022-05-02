@@ -112,8 +112,8 @@ while 1:
                 else:
                     int(PORT2)
             else:
-                HOST = '192.168.128.2'
-                PORT = 5800
+                HOST = '192.168.128.66'
+                PORT = 6800
 
 
 
