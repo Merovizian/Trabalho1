@@ -93,14 +93,14 @@ while 1:
             for b in range(0, n):
                 print(arquivo[a]['matriz'][b])
             print(f"Det Inversa: {arquivo[a]['inversa']}")
-            print(f"Tempo total de execução {time.time() - arquivo[a]['inicial']}")
+            print(f"Tempo total de execução {round(time.time() - arquivo[a]['inicial'],2)} segundos")
             print()
 
     else:
         for a in range(0, int(arquivo[0]['quantidade'])):
-            print(f"O Determinante da Matriz {a + 1} {arquivo[a]['inversa']}")
-            print(f"Tempo total de da matriz {a} {time.time() - arquivo[a]['fim']}")
-    print(f"TEMPO DE EXECUÇAO TOTAL DESTE PROGRAMA: {time.time() - arquivo[0]['inicial']}")
+            print(f"O Determinante da Inversa da Matriz {a + 1} {round(arquivo[a]['inversa'],5)}")
+            print(f"Tempo total de da matriz {a} {round(time.time() - arquivo[a]['fim'],2)} segundos")
+    print(f"TEMPO DE EXECUÇAO TOTAL DESTE PROGRAMA: {round(time.time() - arquivo[0]['inicial'],2)} segundos")
 
 
     continuacao = input("Deseja fazer mais alguma operação? ")
