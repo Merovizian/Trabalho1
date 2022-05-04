@@ -92,7 +92,7 @@ while 1:
     if resultado in ("sim, S, SIM,s"):
         for a in range(0, m):
             print(f"Matriz {a+1}")
-            print(arquivo[a]['matriz'])
+            print(numpy.linalg.inv(arquivo[a]['matriz']))
             print(f"Det Inversa: {arquivo[a]['inversa']}")
             print(f"Tempo total de execução {round(time.time() - arquivo[a]['inicial'],2)} segundos")
             print()
