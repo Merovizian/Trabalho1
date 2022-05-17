@@ -29,9 +29,8 @@ def matrizmake(texto, quantidade, ordem, min, max):
 #        time.sleep(1 / taxa)  # serve para fazer testes mais precisos.
 
 #        matriz['fim'] = time.time()  # Variavel para registrar o calculo de cada matriz
-        tempo_matriz = matriz['fim'] - matriz[
-            'inicial']  # Utiliza as variaveis para calcular o tempo passsado para gerar cada matriz
-        print(f"\033[1;34mA MATRIZ {contador + 1} foi gerada com {tempo_matriz:.5f} segundos.... \033[m")
+#        tempo_matriz = matriz['fim'] - matriz['inicial']  # Utiliza as variaveis para calcular o tempo passsado para gerar cada matriz
+        print(f"\033[1;34mA MATRIZ {contador + 1} foi gerada com { matriz['inicial']-time.time():.5f} segundos.... \033[m")
         listamatriz.append(matriz.copy())
 
     return listamatriz
