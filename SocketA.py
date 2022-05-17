@@ -30,7 +30,7 @@ def matrizmake(texto, quantidade, ordem, min, max):
 
 #        matriz['fim'] = time.time()  # Variavel para registrar o calculo de cada matriz
 #        tempo_matriz = matriz['fim'] - matriz['inicial']  # Utiliza as variaveis para calcular o tempo passsado para gerar cada matriz
-        print(f"\033[1;34mA MATRIZ {contador + 1} foi gerada com { matriz['inicial']-time.time():.5f} segundos.... \033[m")
+        print(f"\033[1;34mA MATRIZ {contador + 1} foi gerada com {time.time()-matriz['inicial']:.5f} segundos.... \033[m")
         listamatriz.append(matriz.copy())
 
     return listamatriz

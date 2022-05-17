@@ -73,9 +73,9 @@ while 1:
 
     #Exibir as matrizes recebidas
     print("3 - Pacotes Recebidos")
+    tempofinal = time.time()
     print(f"TEMPO DA CRIAÇÃO ATÉ RECEBIMENTO DE MATRIZES: {round(time.time() - arquivo[0]['inicial'],2)}")
 
-    time.sleep(1)
     m = arquivo[0]['quantidade']
     n = arquivo[0]['ordem']
 
@@ -101,7 +101,7 @@ while 1:
     else:
         for a in range(0, int(arquivo[0]['quantidade'])):
             print(f"O Determinante da Inversa da Matriz {a + 1}: {round(arquivo[a]['inversa'],5)}")
-            print(f"Tempo total de da Matriz {a+1}: {round(time.time() - arquivo[a]['inicial'],2)} segundos")
+            print(f"Tempo total de da Matriz {a+1}: {round(tempofinal - arquivo[a]['inicial'],2)} segundos")
     print()
     print(f"TEMPO DE EXECUÇAO TOTAL DESTE PROGRAMA: {round(time.time() - arquivo[0]['inicial'],2)} segundos")
     break
