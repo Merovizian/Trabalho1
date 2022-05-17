@@ -11,7 +11,7 @@ while automatica.lower() not in ('n','s','sim','nao'):
 print()
 
 
-def matrizmake(texto, quantidade, ordem, min, max, taxa):
+def matrizmake(texto, quantidade, ordem, min, max):
     matriz = dict()
     listamatriz = list()
     texto = list()
@@ -26,9 +26,9 @@ def matrizmake(texto, quantidade, ordem, min, max, taxa):
             texto.append('\n')
         matriz['matriz'] = texto.copy()
         texto.clear()
-        time.sleep(1 / taxa)  # serve para fazer testes mais precisos.
+#        time.sleep(1 / taxa)  # serve para fazer testes mais precisos.
 
-        matriz['fim'] = time.time()  # Variavel para registrar o calculo de cada matriz
+#        matriz['fim'] = time.time()  # Variavel para registrar o calculo de cada matriz
         tempo_matriz = matriz['fim'] - matriz[
             'inicial']  # Utiliza as variaveis para calcular o tempo passsado para gerar cada matriz
         print(f"\033[1;34mA MATRIZ {contador + 1} foi gerada com {tempo_matriz:.5f} segundos.... \033[m")
@@ -73,13 +73,13 @@ quantidade = int(input("Qual a quantidade de matrizes: "))  # Pergunta ao usuár
 ordem = int(input("Informe a ordem da matriz: "))  # Coloca na variavel ordem um inteiro que sera o tamanho da matriz
 
 texto = list()  # lista para registar em arquivo as matrizes geradas.
-taxa = float(input("Informe a taxa de matrizes por segundo: "))  # Taxa de criação das matrizes [MATRIZES/Segundo]
+#taxa = float(input("Informe a taxa de matrizes por segundo: "))  # Taxa de criação das matrizes [MATRIZES/Segundo]
 
 # Variavel que registra o tempo atual em segundos para calculo do tempo total gasto
 ini_total = time.time()
 
 # Função para geração dos valores e registro em uma lista os valores dos elementos em seus respectivos indices
-arquivo = matrizmake(texto, quantidade, ordem, min, max, taxa)
+arquivo = matrizmake(texto, quantidade, ordem, min, max)
 
 # Variavel que registra o tempo atual em segundos para calculo do tempo total gasto
 fim_total = time.time()
