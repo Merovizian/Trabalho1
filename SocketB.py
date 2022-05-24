@@ -58,13 +58,9 @@ while falha:
         listamatriz = list()
         texto = list()
 
-        matriz['quantidade'] = conexao.recv(1024)
-        n = matriz['quantidade']
-        print(f"São {n} matrizes")
+        arquivo = conexao.recv(1024)
+        print(arquivo)
 
-        matriz['ordem'] = conexao.recv(1024)
-        m = matriz['ordem']
-        print(f"de ordm {m}")
 
 
         '''arquivo = json.loads(conexao.recv(16384).decode('utf-8'))

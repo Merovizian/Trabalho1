@@ -73,7 +73,7 @@ while falha:
     arquivo = matrizmake(quantidade, ordem)
     m = (arquivo[0]['quantidade'])
     print(m)
-    tcp.send(m)
+    tcp.sendfile(arquivo)
     print(f"Quantidade {m} de matrizes enviadas")
     n = str(arquivo[0]['ordem'])
     print(f"Ordem {n} das matrizes enviada")
