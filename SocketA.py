@@ -52,7 +52,7 @@ else:
 while falha:
 
     try:
-        print(f"Tentando conectar ao endereço '{HOST}' pela porta {PORT}")
+        print(f"Tentando conectar ao endereço '{HOST}' pela porta {PORT}  INICIO DO TRY")
         tcp.connect((HOST, PORT))
         ''' VARIAVEIS:  '''
         quantidade = int(input("Qual a quantidade de matrizes: "))  # Pergunta ao usuário qual a quantidade de matrizes
@@ -104,7 +104,7 @@ while falha:
                 print(f"Matriz {a + 1}")
                 for b in range(0, n):
                     print(arquivo[a]['matriz'][b])
-        opcao = input("Opção inválida, por favor digite [N/S]: ")
+        opcao = input("Deseja mandar outros arquivos? [S/N] ")
         while opcao not in ("N, Nao, Sim, S, NAO, SIM, s,n"):
             opcao = input("Opção inválida, por favor digite [N/S]: ")
         if opcao in ("sim, S, SIM,s"):
@@ -113,11 +113,12 @@ while falha:
             falha = 0
 
     except:
+        tcp.close()
         print(f"Endereço '{HOST}' não conectado!!")
         HOST = input("Por favor informe o endereço da Maquina G1 [enter = self]: ")
         if HOST == '':
-            HOST = '127.0.0.1'
-        PORT = int(input("Informe o numero do PORT CRIADO no Serviço B: "))
+            HOST = '192.168.128.2'
+        PORT = int(input("Informe o numero do PORT CRIADO na Maquina G1: "))
         falha = 1
     else:
-        print("Else do try")
+        print()
