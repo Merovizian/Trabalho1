@@ -69,9 +69,9 @@ while falha:
 
         m = str(arquivo[0]['quantidade'])
         tcp.send(m)
-        print("Quantidade de matrizes enviadas")
+        print(f"Quantidade {m} de matrizes enviadas")
         n = str(arquivo[0]['ordem'])
-        print("Ordem das matrizes enviada")
+        print(f"Ordem {n} das matrizes enviada")
 
 
         #INICIO TESTE PARA ENVIAR POR STRINGS
