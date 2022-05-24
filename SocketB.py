@@ -5,8 +5,6 @@ import numpy as np
 falha = 1
 
 # Pergunta ao usuário qual que é o endereço do host e a port (Serviço B é o HOST)
-
-
 automatica = input("Deseja inserir dados manualmente? ")
 while automatica.lower() not in ('n','s','sim','nao'):
     automatica = input("Opção inválida, por favor digite [N/S]: ")
@@ -27,22 +25,14 @@ else:
     port = 5800
 
 
-
-
-
-print("Definindo o servidor")
-time.sleep(0.5)
-print("Configurando socket para AFINET E SOCK STREM")
-time.sleep(0.5)
-SocketB = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-print(f"Fazendo a conexao no endereço {host} e na porta {port}")
-time.sleep(0.5)
-SocketB.bind((host, port))
-SocketB.listen()
-print("Servidor Ativo!!")
-time.sleep(0.5)
-
 while 1:
+
+    print("Configurando socket para AFINET E SOCK STREM")
+    SocketB = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    print(f"Fazendo a conexao no endereço {host} e na porta {port}")
+    SocketB.bind((host, port))
+    SocketB.listen()
+    print("Servidor Ativo!!")
 
     # Programa fica em stand by esperando o client
     print("1 - Esperando a conexão com a Maquina C1")
@@ -51,10 +41,9 @@ while 1:
     time.sleep(1)
     # Coloca na variavel arquivo a lista de dicionarios que vier do cliente
     arquivo = json.loads(conexao.recv(16384).decode('utf-8'))
+    print("3 - Pacotes Recebidos")
     conexao.close()
 
-    print("3 - Pacotes Recebidos")
-#    time.sleep(1)
     m = arquivo[0]['quantidade']
     n = arquivo[0]['ordem']
     print(f"Foram recebidas {m} Matrizes de Ordem {n} x {n}")
@@ -77,8 +66,7 @@ while 1:
 
         # Cria uma key inversa na listas de dicionarios.
         arquivo[b]['inversa'] = round(1 / np.linalg.det(arquivo[b]['matriz']), 5)
-    print()
-    print("Pacote Recebido com Sucesso!! ")
+    print("Matrizes invertidas com Sucesso!! ")
 
 
     while falha:

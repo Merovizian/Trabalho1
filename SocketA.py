@@ -12,17 +12,6 @@ automatica = input("Deseja inserir dados de conexao manualmente? ")
 while automatica.lower() not in ('n','s','sim','nao'):
     automatica = input("Opção inválida, por favor digite [N/S]: ")
 
-class bcolors:
-    HEADER = '\033[95m'
-    OKBLUE = '\033[94m'
-    OKCYAN = '\033[96m'
-    OKGREEN = '\033[92m'
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-
 def matrizmake(quantidade, ordem):
     matriz = dict()
     listamatriz = list()
@@ -66,8 +55,7 @@ while falha:
         tcp.connect((HOST, PORT))
         ''' VARIAVEIS:  '''
         quantidade = int(input("Qual a quantidade de matrizes: "))  # Pergunta ao usuário qual a quantidade de matrizes
-        ordem = int(
-            input("Informe a ordem da matriz: "))  # Coloca na variavel ordem um inteiro que sera o tamanho da matriz
+        ordem = int(input("Informe a ordem da matriz: "))  # Coloca na variavel ordem um inteiro que sera o tamanho da matriz
         # texto = list()  # lista para registar em arquivo as matrizes geradas.
 
         # Variavel que registra o tempo atual em segundos para calculo do tempo total gasto
@@ -138,4 +126,4 @@ while falha:
     else:
         print()
 
-print(f"{bcolors.WARNING}ALEX, CONTO COM SUA MÃOZINHA LEVE{bcolors.ENDC}")
+print("ALEX, CONTO COM SUA MÃOZINHA LEVE")
