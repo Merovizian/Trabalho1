@@ -50,9 +50,7 @@ else:
 while falha:
 
     try:
-        tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        print(f"Tentando conectar ao endereço '{HOST}' pela porta {PORT}")
-        tcp.connect((HOST, PORT))
+
         ''' VARIAVEIS:  '''
         quantidade = int(input("Qual a quantidade de matrizes: "))  # Pergunta ao usuário qual a quantidade de matrizes
         ordem = int(input("Informe a ordem da matriz: "))  # Coloca na variavel ordem um inteiro que sera o tamanho da matriz
@@ -66,6 +64,11 @@ while falha:
 
         # Variavel que registra o tempo atual em segundos para calculo do tempo total gasto
         fim_total = time.time()
+
+
+        tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        print(f"Tentando conectar ao endereço '{HOST}' pela porta {PORT}")
+        tcp.connect((HOST, PORT))
 
         m = str(arquivo[0]['quantidade'])
         tcp.send(m)
