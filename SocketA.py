@@ -67,10 +67,10 @@ while falha:
         # Variavel que registra o tempo atual em segundos para calculo do tempo total gasto
         fim_total = time.time()
 
-        m = arquivo[0]['quantidade']
+        m = str(arquivo[0]['quantidade'])
         tcp.send(m)
         print("Quantidade de matrizes enviadas")
-        n = arquivo[0]['ordem']
+        n = str(arquivo[0]['ordem'])
         print("Ordem das matrizes enviada")
 
 
