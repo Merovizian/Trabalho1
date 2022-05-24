@@ -112,8 +112,6 @@ while falha:
         else:
             falha = 0
 
-
-
     except:
         print(f"Endereço '{HOST}' não conectado!!")
         HOST = input("Por favor informe o endereço da Maquina G1 [enter = self]: ")
@@ -122,7 +120,4 @@ while falha:
         PORT = int(input("Informe o numero do PORT CRIADO no Serviço B: "))
         falha = 1
     else:
-        print(f"Endereço '{HOST}' conectado!!")
-        falha = 0
-
-
+        print("Else do try")
