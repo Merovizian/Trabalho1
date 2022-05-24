@@ -71,7 +71,8 @@ while falha:
     quantidade = int(input("Qual a quantidade de matrizes: "))  # Pergunta ao usuário qual a quantidade de matrizes
     ordem = int(input("Informe a ordem da matriz: "))  # Coloca na variavel ordem um inteiro que sera o tamanho da matriz
     arquivo = matrizmake(quantidade, ordem)
-    m = str(arquivo[0]['quantidade'])
+    m = (arquivo[0]['quantidade'])
+    print(m)
     tcp.send(m)
     print(f"Quantidade {m} de matrizes enviadas")
     n = str(arquivo[0]['ordem'])
