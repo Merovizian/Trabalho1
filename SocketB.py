@@ -26,6 +26,8 @@ else:
 
 
 while falha:
+
+    #PARA RECEBER AS MATRIZES
     try:
         print("Configurando socket para AFINET E SOCK STREM")
         tcp2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -51,12 +53,9 @@ while falha:
         tempoagora = time.time()
     except:
         print(f"Endereço '{host}' não conectado!!")
-        host = input("Por favor informar o endereço da Maquina G2 [enter = 192.168.128.66]: ")
-        if host == '':
-            host = '192.168.128.66'
-        port = (input("Informe o numero do PORT CRIADO na Maquina G2: [enter = 6800]: "))
+        port = (input("Informe o numero do PORT CRIADO na Maquina G2: [enter = 5800]: "))
         if port == '':
-            port = 6800
+            port = 5800
         else:
             int(port)
         falha = 1
@@ -82,7 +81,7 @@ while falha:
         arquivo[b]['inversa'] = round(1 / np.linalg.det(arquivo[b]['matriz']), 5)
     print("Matrizes invertidas com Sucesso!! ")
 
-
+    #PARA ENVIAR AS MATRIZES
     while 1:
 
         try:
