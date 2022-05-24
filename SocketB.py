@@ -99,6 +99,7 @@ while falha:
             else:
                 int(PORT2)
             falha = 1
+            tcp2.close()
             break #para testes
         else:
             print(f"Endereço '{HOST2}' conectado!!")
