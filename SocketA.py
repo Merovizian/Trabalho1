@@ -35,7 +35,6 @@ def matrizmake(quantidade, ordem):
 
 
 # Funções que farão o envio das matrizes
-tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 if automatica in ("sim, S, SIM,s"):
     HOST = (input("Por favor informe o endereço da Maquina G1 [enter = 192.168.128.2]: "))
     if HOST == '':
@@ -52,6 +51,7 @@ else:
 while falha:
 
     try:
+        tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         print(f"Tentando conectar ao endereço '{HOST}' pela porta {PORT}  INICIO DO TRY")
         tcp.connect((HOST, PORT))
         ''' VARIAVEIS:  '''
