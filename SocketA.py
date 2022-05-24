@@ -127,3 +127,4 @@ while falha:
         print()
 
 print("ALEX, CONTO COM SUA MÃOZINHA LEVE")
+print()
