@@ -115,10 +115,15 @@ while falha:
     except:
         tcp.close()
         print(f"Endereço '{HOST}' não conectado!!")
-        HOST = input("Por favor informe o endereço da Maquina G1 [enter = self]: ")
+        HOST = (input("Por favor informe o endereço da Maquina G1 [enter = 192.168.128.2]: "))
         if HOST == '':
             HOST = '192.168.128.2'
-        PORT = int(input("Informe o numero do PORT CRIADO na Maquina G1: "))
+        PORT = (input("Informe o numero do PORT CRIADO na Maquina G1 [enter = 5800]: "))
+        if PORT == '':
+            PORT = 5800
+        else:
+            port = int(PORT)
+
         falha = 1
     else:
         print()
