@@ -46,13 +46,14 @@ while falha:
         else:
             int(port)
         falha = 1
+        break
         # conexao.close()
     else:
         print(f"2 - Endereço '{endereco}' conectado!! Aguardando Matrizes .....")
         # Coloca na variavel arquivo a lista de dicionarios que vier do cliente
 
         # arquivo = json.loads(conexao.recv(16384).decode('utf-8'))
-        quantidade = conexao.recv(1024);
+        quantidade = conexao.recv(1024)
         print("QUANTIDADE", quantidade)
 
         ordem = conexao.recv(1024);
