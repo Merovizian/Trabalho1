@@ -145,5 +145,6 @@ while falha:
     # continuacao = input("Deseja fazer mais alguma operação? ")
     
 
+print("ALEX, TENHA DÓ DE TEUS ALUNOS")
 
 
