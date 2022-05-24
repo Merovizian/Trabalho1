@@ -59,8 +59,7 @@ while falha:
         # Variavel que registra o tempo atual em segundos para calculo do tempo total gasto
         ini_total = time.time()
 
-        # Função para geração dos valores e registro em uma lista os valores dos elementos em seus respectivos indices
-        arquivo = matrizmake(quantidade, ordem)
+
 
         # Variavel que registra o tempo atual em segundos para calculo do tempo total gasto
         fim_total = time.time()
@@ -69,12 +68,14 @@ while falha:
         tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         print(f"Tentando conectar ao endereço '{HOST}' pela porta {PORT}")
         tcp.connect((HOST, PORT))
-
+        # Função para geração dos valores e registro em uma lista os valores dos elementos em seus respectivos indices
+        arquivo = matrizmake(quantidade, ordem)
         m = str(arquivo[0]['quantidade'])
         tcp.send(m)
         print(f"Quantidade {m} de matrizes enviadas")
         n = str(arquivo[0]['ordem'])
         print(f"Ordem {n} das matrizes enviada")
+        tcp.send(n)
 
 
         #INICIO TESTE PARA ENVIAR POR STRINGS
