@@ -28,21 +28,20 @@ else:
 while 1:
 
     print("Configurando socket para AFINET E SOCK STREM")
-    SocketB = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    tcp2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     print(f"Fazendo a conexao no endereço {host} e na porta {port}")
-    SocketB.bind((host, port))
-    SocketB.listen()
+    tcp2.bind((host, port))
+    tcp2.listen()
     print("Servidor Ativo!!")
 
     # Programa fica em stand by esperando o client
     print("1 - Esperando a conexão com a Maquina C1")
-    conexao, endereco = SocketB.accept()
+    conexao, endereco = tcp2.accept()
     print(f"2 - Endereço '{endereco}' conectado!! Aguardando Matrizes .....")
-    time.sleep(1)
     # Coloca na variavel arquivo a lista de dicionarios que vier do cliente
     arquivo = json.loads(conexao.recv(16384).decode('utf-8'))
     print("3 - Pacotes Recebidos")
-    conexao.close()
+    tcp2.close()
 
     m = arquivo[0]['quantidade']
     n = arquivo[0]['ordem']
