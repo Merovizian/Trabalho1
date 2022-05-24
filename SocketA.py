@@ -68,11 +68,40 @@ while falha:
         fim_total = time.time()
 
         m = arquivo[0]['quantidade']
+        tcp.send(m)
+        print("Quantidade de matrizes enviadas")
         n = arquivo[0]['ordem']
+        print("Ordem das matrizes enviada")
 
+
+        #INICIO TESTE PARA ENVIAR POR STRINGS
+
+        '''        for x in range(0, quantidade):
+            tcp.send()    
+            
+            
+        for y in range(0, ordem):
+                numero = random.randint(0, 9)
+                texto.append(f'{numero:0>{len(str(9))}}') 
+        '''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        '''
         b = json.dumps(arquivo).encode('utf-8')
         tcp.sendall(b)
-        tcp.close()
+        tcp.close()'''
 
         # Utiliza as variaveis para calcular o tempo passsado para gerar cada matriz
         print(f"\033[1;32mForam geradas {quantidade} matrizes em {fim_total - ini_total:.5f} segundos\033[m")
