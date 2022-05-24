@@ -12,6 +12,16 @@ automatica = input("Deseja inserir dados de conexao manualmente? ")
 while automatica.lower() not in ('n','s','sim','nao'):
     automatica = input("Opção inválida, por favor digite [N/S]: ")
 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 def matrizmake(quantidade, ordem):
     matriz = dict()
@@ -52,7 +62,7 @@ while falha:
 
     try:
         tcp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        print(f"Tentando conectar ao endereço '{HOST}' pela porta {PORT}  INICIO DO TRY")
+        print(f"Tentando conectar ao endereço '{HOST}' pela porta {PORT}")
         tcp.connect((HOST, PORT))
         ''' VARIAVEIS:  '''
         quantidade = int(input("Qual a quantidade de matrizes: "))  # Pergunta ao usuário qual a quantidade de matrizes
@@ -127,3 +137,5 @@ while falha:
         falha = 1
     else:
         print()
+
+print(f"{bcolors.WARNING}ALEX, CONTO COM SUA MÃOZINHA LEVE{bcolors.ENDC}")
