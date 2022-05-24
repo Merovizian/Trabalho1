@@ -38,7 +38,6 @@ while falha:
         # Programa fica em stand by esperando o client
         print("1 - Esperando a conexão com a Maquina C1")
         conexao, endereco = tcp2.accept()
-        print(conexao)
 
     except:
         print(f"Endereço '{host}' não conectado!!")
