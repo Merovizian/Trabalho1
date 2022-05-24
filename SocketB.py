@@ -25,7 +25,7 @@ else:
     port = 5800
 
 
-while 1:
+while falha:
 
     print("Configurando socket para AFINET E SOCK STREM")
     tcp2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -68,7 +68,7 @@ while 1:
     print("Matrizes invertidas com Sucesso!! ")
 
 
-    while falha:
+    while 1:
 
         try:
             # Envio das matrizes
@@ -85,11 +85,9 @@ while 1:
                 HOST2 = '192.168.128.66'
                 PORT2 = 6800
 
-            SocketC = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-
+            tcp3 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             print(f"Tentando conectar ao endereço '{HOST2}' pela porta {PORT2}")
-            SocketC.connect((HOST2, PORT2))
+            tcp3.connect((HOST2, PORT2))
         except:
             print(f"Endereço '{HOST2}' não conectado!!")
             HOST2 = input("Por favor informar o endereço da Maquina G2 [enter = 192.168.128.66]: ")
@@ -101,19 +99,16 @@ while 1:
             else:
                 int(PORT2)
             falha = 1
+            break #para testes
         else:
             print(f"Endereço '{HOST2}' conectado!!")
-            falha = 0
-    SocketC.send(json.dumps(arquivo).encode('utf-8'))
+#    SocketC.send(json.dumps(arquivo).encode('utf-8'))
 
 
     #Pergunta ao usuario se gostaria de mostrar as matrizes na tela.
-
-    resultado = input("Deseja imprimir as matrizes? ")
+    resultado = input("Deseja imprimir as matrizes? [S/N]")
     while resultado not in ("N, Nao, Sim, S, NAO, SIM, s,n"):
         resultado = input("Opção inválida, por favor digite [N/S]: ")
-    print()
-
     if resultado in ("sim, S, SIM,s"):
         for a in range(0, m):
             print(f"Matriz {a+1}")
@@ -121,8 +116,14 @@ while 1:
                 print(arquivo[a]['matriz'][b])
             print(f"Det: {round(np.linalg.det(arquivo[a]['matriz']), 5)}")
             print(f"Det Inversa: {arquivo[a]['inversa']}")
+
+    opcao = input("Deseja receber e mandar outros arquivos? [S/N] ")
+    while opcao not in ("N, Nao, Sim, S, NAO, SIM, s,n"):
+        opcao = input("Opção inválida, por favor digite [N/S]: ")
+    if opcao in ("sim, S, SIM,s"):
+        falha = 1
+    else:
         falha = 0
-        break
 
     # Para futuras ocorrencias
     # continuacao = input("Deseja fazer mais alguma operação? ")
