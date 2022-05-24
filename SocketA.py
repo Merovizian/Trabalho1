@@ -42,7 +42,7 @@ if automatica in ("sim, S, SIM,s"):
     if PORT == '':
         PORT = 5800
     else:
-        port = int(PORT)
+        PORT = int(PORT)
 else:
     HOST = '192.168.128.2'
     PORT = 5800
@@ -120,7 +120,7 @@ while falha:
         if PORT == '':
             PORT = 5800
         else:
-            port = int(PORT)
+            PORT = int(PORT)
 
         falha = 1
     else:
