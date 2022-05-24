@@ -51,9 +51,7 @@ while falha:
 
     try:
 
-        ''' VARIAVEIS:  '''
-        quantidade = int(input("Qual a quantidade de matrizes: "))  # Pergunta ao usuário qual a quantidade de matrizes
-        ordem = int(input("Informe a ordem da matriz: "))  # Coloca na variavel ordem um inteiro que sera o tamanho da matriz
+
         # texto = list()  # lista para registar em arquivo as matrizes geradas.
 
         # Variavel que registra o tempo atual em segundos para calculo do tempo total gasto
@@ -69,6 +67,9 @@ while falha:
         print(f"Tentando conectar ao endereço '{HOST}' pela porta {PORT}")
         tcp.connect((HOST, PORT))
         # Função para geração dos valores e registro em uma lista os valores dos elementos em seus respectivos indices
+        ''' VARIAVEIS:  '''
+        quantidade = int(input("Qual a quantidade de matrizes: "))  # Pergunta ao usuário qual a quantidade de matrizes
+        ordem = int(input("Informe a ordem da matriz: "))  # Coloca na variavel ordem um inteiro que sera o tamanho da matriz
         arquivo = matrizmake(quantidade, ordem)
         m = str(arquivo[0]['quantidade'])
         tcp.send(m)
