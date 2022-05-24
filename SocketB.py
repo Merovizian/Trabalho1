@@ -39,6 +39,17 @@ while falha:
         # Programa fica em stand by esperando o client
         print("1 - Esperando a conexão com a Maquina C1")
         conexao, endereco = tcp2.accept()
+
+    except:
+        print(f"Endereço '{host}' não conectado!!")
+        port = (input("Crie uma Porta para a Maquina C1: [enter = 5800]: "))
+        if port == '':
+            port = 5800
+        else:
+            int(port)
+        falha = 1
+        tcp2.close()
+    else:
         print(f"2 - Endereço '{endereco}' conectado!! Aguardando Matrizes .....")
         # Coloca na variavel arquivo a lista de dicionarios que vier do cliente
         arquivo = json.loads(conexao.recv(16384).decode('utf-8'))
@@ -51,17 +62,6 @@ while falha:
         auxiliar = list()
         auxiliar2 = list()
         tempoagora = time.time()
-    except:
-        print(f"Endereço '{host}' não conectado!!")
-        port = (input("Crie uma Porta para a Maquina C1: [enter = 5800]: "))
-        if port == '':
-            port = 5800
-        else:
-            int(port)
-        falha = 1
-        tcp2.close()
-    else:
-        print(f"Endereço '{host}' conectado!!")
 
     # Cria a lista das 'm' matrizes e as coloca na variavel lista_matrizes
     for b in range(0, arquivo[0]['quantidade']):
