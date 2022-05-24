@@ -26,29 +26,44 @@ else:
 
 
 while falha:
+    try:
+        print("Configurando socket para AFINET E SOCK STREM")
+        tcp2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        print(f"Fazendo a conexao no endereço {host} e na porta {port}")
+        tcp2.bind((host, port))
+        tcp2.listen()
+        print("Servidor Ativo!!")
 
-    print("Configurando socket para AFINET E SOCK STREM")
-    tcp2 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    print(f"Fazendo a conexao no endereço {host} e na porta {port}")
-    tcp2.bind((host, port))
-    tcp2.listen()
-    print("Servidor Ativo!!")
+        # Programa fica em stand by esperando o client
+        print("1 - Esperando a conexão com a Maquina C1")
+        conexao, endereco = tcp2.accept()
+        print(f"2 - Endereço '{endereco}' conectado!! Aguardando Matrizes .....")
+        # Coloca na variavel arquivo a lista de dicionarios que vier do cliente
+        arquivo = json.loads(conexao.recv(16384).decode('utf-8'))
+        print("3 - Pacotes Recebidos")
+        tcp2.close()
 
-    # Programa fica em stand by esperando o client
-    print("1 - Esperando a conexão com a Maquina C1")
-    conexao, endereco = tcp2.accept()
-    print(f"2 - Endereço '{endereco}' conectado!! Aguardando Matrizes .....")
-    # Coloca na variavel arquivo a lista de dicionarios que vier do cliente
-    arquivo = json.loads(conexao.recv(16384).decode('utf-8'))
-    print("3 - Pacotes Recebidos")
-    tcp2.close()
-
-    m = arquivo[0]['quantidade']
-    n = arquivo[0]['ordem']
-    print(f"Foram recebidas {m} Matrizes de Ordem {n} x {n}")
-    auxiliar = list()
-    auxiliar2 = list()
-    tempoagora = time.time()
+        m = arquivo[0]['quantidade']
+        n = arquivo[0]['ordem']
+        print(f"Foram recebidas {m} Matrizes de Ordem {n} x {n}")
+        auxiliar = list()
+        auxiliar2 = list()
+        tempoagora = time.time()
+    except:
+        print(f"Endereço '{host}' não conectado!!")
+        host = input("Por favor informar o endereço da Maquina G2 [enter = 192.168.128.66]: ")
+        if host == '':
+            host = '192.168.128.66'
+        port = (input("Informe o numero do PORT CRIADO na Maquina G2: [enter = 6800]: "))
+        if port == '':
+            port = 6800
+        else:
+            int(port)
+        falha = 1
+        tcp2.close()
+        break #para testes
+    else:
+        print(f"Endereço '{host}' conectado!!")
 
     # Cria a lista das 'm' matrizes e as coloca na variavel lista_matrizes
     for b in range(0, arquivo[0]['quantidade']):
