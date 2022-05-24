@@ -51,7 +51,7 @@ while falha:
     else:
         print(f"2 - Endereço '{endereco}' conectado!! Aguardando Matrizes .....")
         # Coloca na variavel arquivo a lista de dicionarios que vier do cliente
-        arquivo = json.loads(conexao.recv(16384).decode('utf-8'))
+        arquivo = conexao.recv(1027)
         print("3 - Pacotes Recebidos")
         tcp2.close()
         conexao.close()

@@ -70,8 +70,12 @@ while falha:
         m = arquivo[0]['quantidade']
         n = arquivo[0]['ordem']
 
-        b = json.dumps(arquivo).encode('utf-8')
-        tcp.sendall(b)
+        #b = json.dumps(arquivo).encode('utf-8')
+
+
+
+
+        tcp.sendall(arquivo)
         tcp.close()
 
         # Utiliza as variaveis para calcular o tempo passsado para gerar cada matriz
