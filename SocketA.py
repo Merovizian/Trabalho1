@@ -4,8 +4,7 @@ import json
 import time
 
 falha = 1
-resultado = ''
-opcao = ''
+
 
 
 #Pergunta ao usuario se quer inserir os dados de conexao manualmente
@@ -105,6 +104,7 @@ while falha:
                 print(f"Matriz {a + 1}")
                 for b in range(0, n):
                     print(arquivo[a]['matriz'][b])
+        opcao = input("Opção inválida, por favor digite [N/S]: ")
         while opcao not in ("N, Nao, Sim, S, NAO, SIM, s,n"):
             opcao = input("Opção inválida, por favor digite [N/S]: ")
         if opcao in ("sim, S, SIM,s"):
