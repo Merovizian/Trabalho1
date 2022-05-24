@@ -47,15 +47,14 @@ while falha:
         else:
             int(port)
         falha = 1
-        tcp2.close()
+        # conexao.close()
     else:
         print(f"2 - Endereço '{endereco}' conectado!! Aguardando Matrizes .....")
         # Coloca na variavel arquivo a lista de dicionarios que vier do cliente
-        arquivo = json.loads(conexao.recv(16384).decode('utf-8'))
+        arquivo = json.loads(conexao.recv(999999999).decode('utf-8'))
         print("3 - Pacotes Recebidos")
         tcp2.close()
         conexao.close()
-
         m = arquivo[0]['quantidade']
         n = arquivo[0]['ordem']
         print(f"Foram recebidas {m} Matrizes de Ordem {n} x {n}")
@@ -66,7 +65,6 @@ while falha:
     # Cria a lista das 'm' matrizes e as coloca na variavel lista_matrizes
     for b in range(0, arquivo[0]['quantidade']):
         print(f"Calculando a inversa e o determinante da Matriz {b+1}")
-#        time.sleep(0.5)
         for a in arquivo[b]['matriz']:
             if a == '\n':
                 auxiliar2.append(auxiliar.copy())
