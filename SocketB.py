@@ -35,10 +35,10 @@ while falha:
         tcp2.bind((host, port))
         tcp2.listen()
         print("Servidor Ativo!!")
-
         # Programa fica em stand by esperando o client
         print("1 - Esperando a conexão com a Maquina C1")
         conexao, endereco = tcp2.accept()
+        print(conexao)
 
     except:
         print(f"Endereço '{host}' não conectado!!")
@@ -55,6 +55,7 @@ while falha:
         arquivo = json.loads(conexao.recv(16384).decode('utf-8'))
         print("3 - Pacotes Recebidos")
         tcp2.close()
+        conexao.close()
 
         m = arquivo[0]['quantidade']
         n = arquivo[0]['ordem']
@@ -79,6 +80,8 @@ while falha:
         # Cria uma key inversa na listas de dicionarios.
         arquivo[b]['inversa'] = round(1 / np.linalg.det(arquivo[b]['matriz']), 5)
     print("Matrizes invertidas com Sucesso!! ")
+
+
 
     #PARA ENVIAR AS MATRIZES
     while 1:
