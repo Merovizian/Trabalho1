@@ -53,14 +53,13 @@ while falha:
         tempoagora = time.time()
     except:
         print(f"Endereço '{host}' não conectado!!")
-        port = (input("Informe o numero do PORT CRIADO na Maquina G2: [enter = 5800]: "))
+        port = (input("Crie uma Porta para a Maquina C1: [enter = 5800]: "))
         if port == '':
             port = 5800
         else:
             int(port)
         falha = 1
         tcp2.close()
-        break #para testes
     else:
         print(f"Endereço '{host}' conectado!!")
 
