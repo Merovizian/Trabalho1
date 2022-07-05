@@ -119,7 +119,7 @@ while falha:
         else:
             print(f"Endereço '{HOST2}' conectado!!")
             pacote = json.dumps(arquivo).encode('utf-8')
-            tcp3.sendall(b)
+            tcp3.sendall(pacote)
             tcp3.close()
 
 
