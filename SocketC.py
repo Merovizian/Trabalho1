@@ -117,7 +117,5 @@ while 1:
     print()
     print(f"TEMPO DE EXECUÇAO TOTAL DESTE PROGRAMA: {round(time.time() - arquivo[0]['inicial'],2)} segundos")
     break
-    #caso queira implementar algo mais.
-    #continuacao = input("Deseja fazer mais alguma operação? ")
 
-
+print("ALEX, Seja piedoso!!")

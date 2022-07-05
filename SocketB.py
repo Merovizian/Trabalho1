@@ -139,8 +139,4 @@ while falha:
     else:
         falha = 0
 
-    # Para futuras ocorrencias
-    # continuacao = input("Deseja fazer mais alguma operação? ")
-    
-
 print("ALEX, TENHA DÓ DE TEUS ALUNOS!!")
