@@ -1,0 +1,111 @@
+DJI Mobile SDK for Android Latest Version 4.16.1
+What Is This?
+The DJI Mobile SDK enables you to automate your DJI Product. You can control flight, and many subsystems of the product including the camera and gimbal. Using the Mobile SDK, create a customized mobile app to unlock the full potential of your DJI aerial platform.
+
+Integration
+Declare dependency via Maven:
+
+<dependency>
+    <groupId>com.dji</groupId>
+    <artifactId>dji-sdk</artifactId>
+    <version>4.16.1</version>
+</dependency>
+
+<dependency>
+    <groupId>com.dji</groupId>
+    <artifactId>dji-sdk-provided</artifactId>
+    <version>4.16.1</version>
+</dependency>
+or Gradle:
+
+compile 'com.dji:dji-sdk:4.16.1'
+provided 'com.dji:dji-sdk-provided:4.16.1'
+For further detail on how to integrate the DJI Android SDK into your Android Studio project, please check the Integrate SDK into Application tutorial.
+
+Running the SDK Sample Code
+Developers can run the sample application to immediately run code and see how the DJI Mobile SDK can be used.
+
+One of DJI's aircraft or handheld cameras will be required to run the sample application.
+
+Development Workflow
+From registering as a developer, to deploying an application, the following will take you through the full Mobile SDK Application development process:
+
+Prerequisites
+Register as DJI Developer & Download SDK
+Integrate SDK into Application
+Run Application
+Testing, Profiling & Debugging
+Deploy
+Sample Projects & Tutorials
+Several Android tutorials are provided as examples on how to use different features of the Mobile SDK and debug tools includes:
+
+Application Activation and Aircraft Binding
+Getting Started with UX SDK
+Camera Application
+MapView and Waypoint Application (GaodeMap)
+MapView and Waypoint Application (GoogleMap)
+TapFly and ActiveTrack Application
+Simulator Application
+GEO System Application
+Learn More about DJI Products and the Mobile SDK
+Please visit DJI Mobile SDK Documentation for more details.
+
+DJI Mobile UX SDK
+DJI Mobile UX SDK is a suite of product agnostic UI objects that fast tracks the development of iOS applications using the DJI Mobile SDK. For more details, please check here.
+
+Device Health Information Json File
+You can find the hms.json and hms_match_sdkerror.json files in this repo's root folder.
+
+It contains error code and detailed description for device components. Only supported by some components of Matrice 300 RTK and Zenmuse H20 series.
+
+It is recommended to use device health information to replace old diagnostics for flight controller and RTK. There will be a few duplicated component error for gimbal, battery, perception module on Matrice 300 RTK.
+
+Please refer to the table below for duplicated error:
+
+DJIDiagnosticsError	Enum Value	AlarmId
+BATTERY_DISCHARGE_OVER_CURRENT	3001	0x110B0001
+BATTERY_DISCHARGE_OVER_HEAT	3002	0x110B0002
+BATTERY_LOW_TEMPERATURE	3003	0x110B0003
+BATTERY_CELL_BROKEN	3004	0x110B0006
+GIMBAL_CONNECT_TO_FC_ERROR	2005	0x1D030001
+GIMBAL_GYROSCOPE_ERROR	2001	0x1D040002
+GIMBAL_PITCH_ERROR	2002	0x1D040004
+GIMBAL_ROLL_ERROR	2003	0x1D040003
+GIMBAL_YAW_ERROR	2004	0x1D040005
+ProGuard
+If you're planning on optimizing your app with ProGuard, you can add the following rules to your app's proguard.cfg file:
+
+For AAR file, please use the following rule:
+"-libraryjars ./PATH_TO_THIS_FILE/dji_android_sdk.aar"
+For API Library folder, please use the rules in proguard-project file.
+Note: There are two types of DJI Android SDK: AAR and API Library folder, you can download them from DJI Developer Website: http://developer.dji.com/mobile-sdk/downloads/.
+
+SDK Keys
+SDK Keys can be used as an alternative interface to access the product.
+
+A detailed introduction for SDK Keys is here.
+
+Missions Refactor
+Missions are an important part of the SDK as they allow developers to automate DJI's products using a simple, high level interface. In 4.0, missions are being refactored to be more robust and easier to manage.
+
+A detailed introduction for missions is here.
+
+Android Bridge App
+Please check this link to download the apk of the Android Bridge App apk file.
+
+SDK API Reference
+Android SDK API Documentation
+
+License
+The DJI Android SDK is dynamically linked with unmodified libraries of FFmpeg licensed under the LGPLv3.0. The source code of these FFmpeg libraries, the compilation instructions, and the LGPL v3.0 license are provided in Github.
+
+The DJI Android SDK is dynamically linked with unmodified libraries of JTS Topology Suite licensed under the LGPLv3.0.
+
+Support
+You can get support from DJI with the following methods:
+
+Post questions in DJI Developer Forums: Chinese Forum , English Forum
+Join Us
+DJI is looking for all kinds of Software Engineers to continue building the Future of Possible. Available positions in Shenzhen, China and around the world. If you are interested, please send your resume to software-sz@dji.com. For more details, and list of all our global offices, please check https://we.dji.com/jobs_en.html.
+
+DJI 招软件工程师啦，based在深圳，如果你想和我们一起把DJI产品做得更好，请发送简历到 software-sz@dji.com. 或者在这里提交您的简历：https://we.dji.com/zh-CN/position/detail?positionId=1382258951346253824 更多岗位详情请浏览 https://we.dji.com/zh-CN/social.
