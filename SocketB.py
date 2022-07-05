@@ -10,7 +10,6 @@ while automatica.lower() not in ('n','s','sim','nao'):
     automatica = input("Opção inválida, por favor digite [N/S]: ")
 print()
 
-
 if automatica in ("sim, S, SIM,s"):
     host = (input("Por favor informe o endereço desta Maquina (G1) [enter = 192.168.128.2]: "))
     if host == '':
@@ -23,7 +22,6 @@ if automatica in ("sim, S, SIM,s"):
 else:
     host = '192.168.128.2'
     port = 5800
-
 
 while falha:
 
@@ -79,8 +77,6 @@ while falha:
         arquivo[b]['inversa'] = round(1 / np.linalg.det(arquivo[b]['matriz']), 5)
     print("Matrizes invertidas com Sucesso!! ")
     time.sleep(0.5)
-
-
 
     #PARA ENVIAR AS MATRIZES
     while falha:
@@ -148,5 +144,3 @@ while falha:
     
 
 print("ALEX, TENHA DÓ DE TEUS ALUNOS!!")
-
-

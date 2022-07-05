@@ -5,8 +5,6 @@ import time
 
 falha = 1
 
-
-
 #Pergunta ao usuario se quer inserir os dados de conexao manualmente
 automatica = input("Deseja inserir dados de conexao manualmente? ")
 while automatica.lower() not in ('n','s','sim','nao'):
@@ -31,7 +29,6 @@ def matrizmake(quantidade, ordem):
         listamatriz.append(matriz.copy())
 
     return listamatriz
-
 
 # Funções que farão o envio das matrizes
 if automatica in ("sim, S, SIM,s"):
@@ -127,4 +124,3 @@ while falha:
         print()
 
 print("ALEX, CONTO COM SUA MÃOZINHA LEVE")
-print()
