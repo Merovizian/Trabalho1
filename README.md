@@ -16,6 +16,12 @@ O programa SocketC.py deve receber os resultados obtidos no programa 2 e printar
 ## Requisitos
 
 -Python3
+### 3 - Máquinas virtuais
+Obs: Para funcionamento do modo automático de dados, é necessário que as máquinas virtuais sejam:
+g2-8 para SocketC.py
+g1-8 para SocketB.py
+aluno2-7 para SocketA.py
+ 
 
 ## Tutorial
 ### SocketC
@@ -29,6 +35,7 @@ Ao abrir o programa o usuário deverá informar se os parâmetros de conexão co
 
 Após inserir os dados para conexão, o programa ficará ativo, em stand by, esperando a conexão do SocketB.py. 
 ### SocketB
+O próximo passo é abrir o segundo programa.
 Em outra máquina virtual o usuário deverá abrir o programa SocketB.py, sem a necessidade de adicionar atributos.
 ~~~
 python3 SocketB.py 
@@ -37,3 +44,4 @@ Ao abrir o programa o usuário irá se deparar com a mesma solicitação do prog
 
 Após essa etapa, o programa, assim como o programa 3, permanecerá ativo, em stand by, esperando conexão com o SocketA.py
 ### SocketA
+O último passo tutorial é rodar o primeiro programa. Para isso, em outra máquina virtual 
