@@ -15,7 +15,7 @@ O programa SocketC.py deve receber os resultados obtidos no programa 2 e printar
 
 ## Requisitos
 
-Python3
+- Python3
 
 
 ## Tutorial
@@ -24,4 +24,5 @@ Os programas criados para rodar na ordem inversa, ou seja, o primeiro programa a
 ~~~
 python3 SocketC.py 
 ~~~
+
 
