@@ -16,7 +16,7 @@ O programa SocketC.py deve receber os resultados obtidos no programa 2 e printar
 ## Requisitos
 
 -Python3
-### 3 - Máquinas virtuais
+#### 3 - Máquinas virtuais
 Obs: Para funcionamento do modo automático de dados, é necessário que as máquinas virtuais sejam:
 g2-8 para SocketC.py
 g1-8 para SocketB.py
