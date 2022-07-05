@@ -15,9 +15,9 @@ O programa SocketC.py deve receber os resultados obtidos no programa 2 e printar
 
 ## Requisitos
 
-*Python3
+Python3
 
-*3 Máquinas virtuais
+Máquinas virtuais
 
 ### Máquinas virtuais
 Para funcionamento do modo automático de dados, é necessário que as máquinas virtuais sejam:
@@ -58,6 +58,3 @@ Ao abrir o programa, será apresentado os mesmos atributos ao usuário, referent
 Se a conexão foi concluída com sucesso, o SocketB irá atualizar seu status para “2 - [...]” e irá retornar os dados de conexão com o SocketA, como IP e a Porta. assim como um aviso de que está aguardando as Matrizes. 
 
 O usuário, então, deverá inserir os dados referente às características sobre as Matrizes, como a quantidade e a ordem.
-
-
-
