@@ -15,14 +15,17 @@ O programa SocketC.py deve receber os resultados obtidos no programa 2 e printar
 
 ## Requisitos
 
-- Python3
-
+-Python3
 
 ## Tutorial
+### SocketC
 
-Os programas criados para rodar na ordem inversa, ou seja, o primeiro programa a ser rodado é o SocketC.py, não há a necessidade de adicionar atributos neste programa, basta rodá-lo pelo terminal.
+
+Os programas foram criados para rodar na ordem inversa, ou seja, o primeiro programa a ser rodado é o SocketC.py, não há a necessidade de adicionar atributos neste programa, basta rodá-lo pelo terminal.
 ~~~
 python3 SocketC.py 
 ~~~
+Ao abrir o programa o usuário deverá informar se os parâmetros de conexão com o programa 2 (SocketB.py) serão inseridos manualmente. Caso o usuário não queira inserir os dados, tais como endereço de ip e porta, o próprio programa irá gerar automaticamente os dados necessários para a conexão. 
 
-
+Após inserir os dados para conexão, o programa ficará ativo, em stand by, esperando a conexão do SocketB.py. 
+### SocketB
