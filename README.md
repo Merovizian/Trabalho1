@@ -18,6 +18,9 @@ Máquinas virtuais
 Para funcionamento do modo automático de dados, é necessário que as máquinas virtuais sejam:
 
 
-**g2-8**para SocketC.py
-**g1-8**para SocketB.py
+**g2-8** para SocketC.py
+
+**g1-8** para SocketB.py
+
 **aluno2-7**para SocketA.py
+
