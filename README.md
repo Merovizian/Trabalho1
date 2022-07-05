@@ -1,13 +1,3 @@
-# TRABALHO 1  - Laboratório de Redes
-por Eric Giobini
-
-## O que é?
-
-São programas para a avaliação da matéria de Laboratório de Redes. 
-O objetivo geral é a comunicação entre três máquinas distintas, ou seja, cada um dos programas deverá ser rodado em uma VM diferente.
-Cada programa tem uma função específica: 
-
-O programa SocketA.py é o primeiro programa, que deverá gerar matrizes aleatórias com a quantidade e o tamanho sendo informadas pelo usuário.
 
 O programa SocketB.py é o segundo programa, que deverá receber as matrizes enviadas pelo programa 1, inverter cada uma delas e calcular o seu determinante. O resultado dessas manipulações matemáticas em cada matriz é enviado para o programa 3.
 
@@ -19,7 +9,8 @@ Python3
 
 Máquinas virtuais
 
-**Máquinas virtuais**
+###Máquinas virtuais
+
 Para funcionamento do modo automático de dados, é necessário que as máquinas virtuais sejam:
 
 **g2-8**para SocketC.py
@@ -27,4 +18,3 @@ Para funcionamento do modo automático de dados, é necessário que as máquinas
 **g1-8**para SocketB.py
 
 **aluno2-7**para SocketA.py
- 
