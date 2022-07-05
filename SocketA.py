@@ -28,7 +28,6 @@ def matrizmake(quantidade, ordem):
         matriz['matriz'] = texto.copy()
         texto.clear()
         print(f"\033[1;34mA MATRIZ {contador + 1} foi gerada com {time.time()-matriz['inicial']:.5f} segundos.... \033[m")
-        time.sleep(0.05)
         listamatriz.append(matriz.copy())
 
     return listamatriz
