@@ -66,9 +66,12 @@ O usuário, então, deverá inserir os dados referente às características sobr
 ## Funcionalidade
 
 Assim que terminar o tutorial acima, o programa 1 irá enviar as matrizes para o programa 2, e retornará para o usuário os seguintes dados: tempo de criação de cada matriz, tempo geral de criação de todas as matrizes e se o usuário gostaria de imprimir as matrizes na tela. Também será informado sobre a possibilidade de gerar novamente matrizes, mas essa funcionalidade é beta.
+
 O programa 1 é finalizado e não têm mais utilidade, as matrizes geradas estão no programa dois. O programa 2 assim que receber solicitação de conexão do programa 1 irá apresentar os dados dessa conexão como IP e Porta, fará os cálculos dos determinantes e a inversa.
+
 Assim que terminar os cálculos, o programa 2 se conectará com o programa 3 e enviará as matrizes juntamente com os resultados dos cálculos. 
 O programa 3 mostrará os dados da conexão com o programa 2 como IP e Porta e retornará para o usuário o tempo de cada matriz do programa 1 até este ponto. Há a opção de apresentar mais dados, como tempo de cada matriz, cada uma das matrizes, determinante, caso o usuário queira.
+
 IMPORTANTE: Existe uma limitação no tamanho dos dados a serem enviados pelos programas. Sendo recomendado criar no máximo 80 matrizes, de ordem máxima 10.
 
 
@@ -81,5 +84,8 @@ O programa foi projetado para evitar erros, e caso ocorram, há uma interativida
 Caso tenha alguma dúvida, sugestão ou tenha encontrado algum erro, por favor mande um email para ericgmicaela@gmail.com
 
 ## Referencias
-[HOWTO sobre Programação de  soquetes](https://docs.python.org/pt-br/3/howto/sockets.html)
+[HOW TO sobre Programação de  soquetes](https://docs.python.org/pt-br/3/howto/sockets.html)
+[Python3 Documentation](https://www.python.org/doc/)
+[NumPy documentation](https://numpy.org/doc/stable/)
+
 
