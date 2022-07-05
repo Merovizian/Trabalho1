@@ -68,7 +68,7 @@ while 1:
     print(f"2 - Endereço '{endereco}' conectado!! Aguardando Matrizes .....")
     time.sleep(1)
     #Coloca na variavel arquivo a lista de dicionarios que vier do cliente
-    arquivo = json.loads(conexao.recv(16384).decode('utf-8'))
+    arquivo = json.loads(conexao.recv(1024).decode('utf-8'))
     conexao.close()
 
     #Exibir as matrizes recebidas
