@@ -105,6 +105,8 @@ while 1:
                 print(arquivo[a]['matriz'][b])
             print(f"Det: {round(np.linalg.det(arquivo[a]['matriz']), 5)}")
             print(f"Det Inversa: {arquivo[a]['inversa']}")
+            print(f"Tempo total de da Matriz {a+1}: {round(tempofinal - arquivo[a]['inicial'],2)} segundos")
+
 
 
 
