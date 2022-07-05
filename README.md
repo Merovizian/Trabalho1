@@ -1,4 +1,5 @@
-# TRABALHO 1 DE REDES por Eric Giobini
+# TRABALHO 1  - Laboratório de Redes
+por Eric Giobini
 
 ## O que é isso?
 
