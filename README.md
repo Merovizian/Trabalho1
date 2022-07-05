@@ -9,9 +9,9 @@ O programa SocketC.py deve receber os resultados obtidos no programa 2 e printar
 
 ## Requisitos
 
-Python3
+- Python3
 
-Máquinas virtuais
+- Máquinas virtuais
 
 ### Máquinas virtuais
 
