@@ -85,7 +85,9 @@ Caso tenha alguma dúvida, sugestão ou tenha encontrado algum erro, por favor m
 
 ## Referencias
 [HOW TO sobre Programação de  soquetes](https://docs.python.org/pt-br/3/howto/sockets.html)
+
 [Python3 Documentation](https://www.python.org/doc/)
+
 [NumPy documentation](https://numpy.org/doc/stable/)
 
 
