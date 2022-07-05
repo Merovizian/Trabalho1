@@ -83,7 +83,7 @@ while falha:
 
 
     #PARA ENVIAR AS MATRIZES
-    while True:
+    while falha:
 
         try:
             # Envio das matrizes
@@ -121,7 +121,7 @@ while falha:
             pacote = json.dumps(arquivo).encode('utf-8')
             tcp3.sendall(pacote)
             tcp3.close()
-
+            falha = 0
 
     #Pergunta ao usuario se gostaria de mostrar as matrizes na tela.
     resultado = input("Deseja imprimir as matrizes? [S/N]")
