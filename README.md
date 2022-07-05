@@ -16,10 +16,11 @@ O programa SocketC.py deve receber os resultados obtidos no programa 2 e printar
 ## Requisitos
 
 -Python3
+
 -3 Máquinas virtuais
 
 ### Máquinas virtuais
-Obs: Para funcionamento do modo automático de dados, é necessário que as máquinas virtuais sejam:
+Para funcionamento do modo automático de dados, é necessário que as máquinas virtuais sejam:
 
 g2-8 para SocketC.py
 
@@ -36,7 +37,7 @@ Os programas foram criados para rodar na ordem inversa, ou seja, o primeiro prog
 ~~~
 python3 SocketC.py 
 ~~~
-Ao abrir o programa o usuário deverá informar se os parâmetros de conexão com o programa 2 (SocketB.py) serão inseridos manualmente. Caso o usuário não queira inserir os dados, tais como endereço de ip e porta, o próprio programa irá gerar automaticamente os dados necessários para a conexão. 
+Ao abrir o programa o usuário deverá informar se os parâmetros de conexão com o programa 2 (SocketB.py) serão inseridos manualmente. Caso o usuário não queira inserir os dados, tais como endereço de ip e porta, o próprio programa irá gerar automaticamente os dados necessários para a conexão (Lembre-se: para funcionamento do modo automático, os requisitos deverão ser satisfeitos). 
 
 Após inserir os dados para conexão, o programa ficará ativo, em stand by, esperando a conexão do SocketB.py. 
 ### SocketB
