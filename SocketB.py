@@ -58,6 +58,7 @@ while falha:
         m = arquivo[0]['quantidade']
         n = arquivo[0]['ordem']
         print(f"Foram recebidas {m} Matrizes de Ordem {n} x {n}")
+        time.sleep(0.5)
         auxiliar = list()
         auxiliar2 = list()
         tempoagora = time.time()
@@ -77,11 +78,12 @@ while falha:
         # Cria uma key inversa na listas de dicionarios.
         arquivo[b]['inversa'] = round(1 / np.linalg.det(arquivo[b]['matriz']), 5)
     print("Matrizes invertidas com Sucesso!! ")
+    time.sleep(0.5)
 
 
 
     #PARA ENVIAR AS MATRIZES
-    while 1:
+    while True:
 
         try:
             # Envio das matrizes
@@ -116,7 +118,9 @@ while falha:
             break #para testes
         else:
             print(f"Endereço '{HOST2}' conectado!!")
-#    SocketC.send(json.dumps(arquivo).encode('utf-8'))
+            pacote = json.dumps(arquivo).encode('utf-8')
+            tcp3.sendall(b)
+            tcp3.close()
 
 
     #Pergunta ao usuario se gostaria de mostrar as matrizes na tela.
