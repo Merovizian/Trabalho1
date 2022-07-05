@@ -1,7 +1,7 @@
 import socket
 import json
 import time
-import numpy
+import numpy as np
 
 #import numpy as np
 falha = 1
@@ -89,14 +89,24 @@ while 1:
         resultado = input("Opção inválida, por favor digite [N/S]: ")
     print()
 
-    if resultado in ("sim, S, SIM,s"):
+    '''   if resultado in ("sim, S, SIM,s"):
         for a in range(0, m):
             print(f"Matriz {a+1}")
             print(arquivo[a]['matriz'])
 #            print(numpy.linalg.inv(arquivo[a]['matriz']))
             print(f"Det Inversa: {arquivo[a]['inversa']}")
             print(f"Tempo total de execução {round(time.time() - arquivo[a]['inicial'],2)} segundos")
-            print()
+            print()'''
+
+    if resultado in ("sim, S, SIM,s"):
+        for a in range(0, m):
+            print(f"Matriz {a+1}")
+            for b in range(0, n):
+                print(arquivo[a]['matriz'][b])
+            print(f"Det: {round(np.linalg.det(arquivo[a]['matriz']), 5)}")
+            print(f"Det Inversa: {arquivo[a]['inversa']}")
+
+
 
     else:
         for a in range(0, int(arquivo[0]['quantidade'])):
