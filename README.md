@@ -50,4 +50,11 @@ Ao abrir o programa o usuário irá se deparar com a mesma solicitação do prog
 
 Após essa etapa, o programa, assim como o programa 3, permanecerá ativo, em stand by, esperando conexão com o SocketA.py
 ### SocketA
-O último passo tutorial é rodar o primeiro programa. Para isso, em outra máquina virtual 
+O último passo tutorial é rodar o primeiro programa. Para isso, em outra máquina virtual o usuário deve abrir o programa 1.
+~~~
+python3 SocketA.py 
+~~~ 
+Ao abrir o programa, será apresentado os mesmos atributos ao usuário, referentes a conexão automática.
+Se a conexão foi concluída com sucesso, o SocketB irá atualizar seu status para “2 - [...]” e irá retornar os dados de conexão com o SocketA, como IP e a Porta. assim como um aviso de que está aguardando as Matrizes. 
+
+O usuário, então, deverá inserir os dados referente às características sobre as Matrizes, como a quantidade e a ordem.
